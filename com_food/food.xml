@@ -15,9 +15,6 @@
 	<languages folder="site"></languages>
 	<administration>
 		<menu link="option=com_food" img="components/com_food/assets/images/food_icon.png">COM_FOOD</menu>
-		<submenu>
-			<menu view="settings" img="components/com_food/assets/images/settings_icon.png" alt="FOOD/Settings">COM_FOOD_SETTINGS</menu>
-		</submenu>
 		<files folder="admin">
 			<folder>controllers</folder>
 			<folder>helpers</folder>

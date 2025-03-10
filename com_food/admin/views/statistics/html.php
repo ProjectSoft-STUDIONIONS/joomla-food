@@ -22,16 +22,16 @@ class FoodViewsStatisticsHtml extends JViewHtml
 	 */
 	protected function addToolbar()
 	{
-		$canDo  = FoodHelpersLendr::getActions();
+		$canDo  = FoodHelpersFood::getActions();
 
 		// Get the toolbar object instance
 		$bar = JToolBar::getInstance('toolbar');
 
 		JToolbarHelper::title(JText::_('COM_FOOD_STATISTICS'));
 
-		if ($canDo->get('core.admin'))
-		{
-			JToolbarHelper::preferences('com_food');
-		}
+		//if ($canDo->get('core.admin'))
+		//{
+			//JToolbarHelper::preferences('com_food');
+		//}
 	}
 }

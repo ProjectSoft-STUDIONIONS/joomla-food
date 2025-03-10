@@ -16,7 +16,7 @@ defined('_JEXEC') or die;
  * @subpackage  com_food
  * @since       1.6
  */
-class LendrHelpersLendr
+class FoodHelpersFood
 {
 	public static $extension = 'com_food';
 
