@@ -1,0 +1,17 @@
+{
+	"name": "com_food",
+	"description": "Компонент com_food для Joomla!",
+	"main": "Gruntfile.js",
+	"authors": [
+		"ProjectSoft <projectsoft2009@yandex.ru>"
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/ProjectSoft-STUDIONIONS/joomla-food#readme",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	]
+}

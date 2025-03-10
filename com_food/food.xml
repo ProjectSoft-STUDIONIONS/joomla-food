@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>COM_FOOD</name>
+	<creationDate>2025-03-11</creationDate>
+	<author>ProjectSoft</author>
+	<authorEmail>projectsoft2009@yandex.ru</authorEmail>
+	<authorUrl>https://t.me/ProjectSoft</authorUrl>
+	<copyright>Copyright © 2008 - all right reserved</copyright>
+	<license>License MIT</license>
+	<version>1.0.0</version>
+	<description>COM_FOOD_DESCRIPTION</description>
+	<install></install>
+	<files folder="site"></files>
+	<scriptfile></scriptfile>
+	<languages folder="site"></languages>
+	<administration>
+		<menu link="option=com_food" img="components/com_food/assets/images/food_icon.png">COM_FOOD</menu>
+		<submenu>
+			<menu view="settings" img="components/com_food/assets/images/settings_icon.png" alt="FOOD/Settings">COM_FOOD_SETTINGS</menu>
+		</submenu>
+		<files folder="admin">
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<folder>languages</folder>
+			<folder>models</folder>
+			<folder>views</folder>
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>food.php</filename>
+			<filename>index.html</filename>
+		</files>
+		<languages folder="admin">
+			<language tag="ru-RU">languages/ru-RU/ru-RU.com_food.ini</language>
+			<language tag="ru-RU">languages/ru-RU/ru-RU.com_food.sys.ini</language>
+		</languages>
+	</administration>
+</extension>
