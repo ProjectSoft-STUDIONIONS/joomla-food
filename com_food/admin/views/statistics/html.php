@@ -27,11 +27,11 @@ class FoodViewsStatisticsHtml extends JViewHtml
 		// Get the toolbar object instance
 		$bar = JToolBar::getInstance('toolbar');
 
-		JToolbarHelper::title(JText::_('COM_FOOD_STATISTICS'));
+		JToolbarHelper::title(JText::_('COM_FOOD_TITLE'), 'folder-open food');
 
-		//if ($canDo->get('core.admin'))
-		//{
-			//JToolbarHelper::preferences('com_food');
-		//}
+		if ($canDo->get('core.admin'))
+		{
+			JToolbarHelper::preferences('com_food');
+		}
 	}
 }

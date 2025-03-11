@@ -27,6 +27,10 @@
 			<filename>index.html</filename>
 		</files>
 		<languages folder="admin">
+			<language tag="en-GB">languages/en-GB/en-GB.com_food.ini</language>
+			<language tag="en-GB">languages/en-GB/en-GB.com_food.sys.ini</language>
+			<language tag="en-US">languages/en-US/en-US.com_food.ini</language>
+			<language tag="en-US">languages/en-US/en-US.com_food.sys.ini</language>
 			<language tag="ru-RU">languages/ru-RU/ru-RU.com_food.ini</language>
 			<language tag="ru-RU">languages/ru-RU/ru-RU.com_food.sys.ini</language>
 		</languages>

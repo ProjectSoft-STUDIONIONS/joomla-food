@@ -11,6 +11,7 @@
 **/*.xml text eol=lf
 **/*.webmanifest text eol=lf
 **/*.sublime-project text eol=lf
+**/*.ini text eol=crlf
 .editorconfig text eol=crlf
 bower.json text eol=crlf
 package.json text eol=crlf
