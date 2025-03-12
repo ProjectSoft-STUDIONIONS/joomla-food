@@ -14,7 +14,7 @@
 	<scriptfile>install.php</scriptfile>
 	<languages folder="site"></languages>
 	<administration>
-		<menu link="option=com_food" img="components/com_food/assets/images/food_icon.png">COM_FOOD</menu>
+		<menu link="option=com_food">COM_FOOD</menu>
 		<files folder="admin">
 			<folder>assets</folder>
 			<folder>controllers</folder>
