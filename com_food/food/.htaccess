@@ -8,6 +8,26 @@ AddDefaultCharset UTF-8
 # Установить опции
 Options +Indexes +ExecCGI +Includes
 
+# Запрещаем индексировать определённые файлы
+IndexIgnore .htaccess *.shtml *.php *.cgi *.html *.js *.css *.ico
+
+# Установить опции индексирования.
+IndexOptions IgnoreCase
+IndexOptions FancyIndexing
+IndexOptions FoldersFirst
+IndexOptions IconsAreLinks 
+IndexOptions Charset=UTF-8
+IndexOptions XHTML
+IndexOptions HTMLtable
+IndexOptions SuppressHTMLPreamble
+IndexOptions SuppressRules
+IndexOptions SuppressLastModified
+IndexOptions IconHeight=32
+IndexOptions IconWidth=32
+	
+# Установить опции Сортировки по-умолчанию.
+IndexOrderDefault Descending Name
+
 # Если включён модуль mod_autoindex
 <IfModule mod_autoindex.c>
 
@@ -59,23 +79,6 @@ Options +Indexes +ExecCGI +Includes
 
 	AddOutputFilter INCLUDES .shtml
 
-	# Установить опции индексирования.
-	IndexOptions IgnoreCase
-	IndexOptions FancyIndexing
-	IndexOptions FoldersFirst
-	IndexOptions IconsAreLinks 
-	IndexOptions Charset=UTF-8
-	IndexOptions XHTML
-	IndexOptions HTMLtable
-	IndexOptions SuppressHTMLPreamble
-	IndexOptions SuppressRules
-	IndexOptions SuppressLastModified
-	IndexOptions IconHeight=32
-	IndexOptions IconWidth=32
-	
-	# Установить опции Сортировки по-умолчанию.
-	IndexOrderDefault Descending Name
-
 	# Назначаем свои параметры установки файлов для шапки и подвала.
 	HeaderName /icons-full/dirlist_header.shtml
 	ReadmeName /icons-full/dirlist_footer.shtml
@@ -83,7 +86,4 @@ Options +Indexes +ExecCGI +Includes
 	# Подключаем Стили к шапке
 	# Возможность. Но в нашем случае не нужно.
 	# IndexStyleSheet /icons-full/normalize.css
-	
-	# Запрещаем индексировать определённые файлы
-	IndexIgnore .htaccess *.shtml *.php *.cgi *.html *.js *.css *.ico
 </IfModule>
