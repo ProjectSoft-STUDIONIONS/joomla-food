@@ -81,12 +81,14 @@ IndexOrderDefault Descending Name
 	}
 
 	private function copyDir($source, $dest) {
-		foreach ($iterator = new \RecursiveIteratorIterator(
-				new \RecursiveDirectoryIterator(
-					$source, \RecursiveDirectoryIterator::SKIP_DOTS
-				),
-				\RecursiveIteratorIterator::SELF_FIRST
-			) as $item):
+		$files = new \RecursiveIteratorIterator(
+			new \RecursiveDirectoryIterator(
+				$source,
+				\RecursiveDirectoryIterator::SKIP_DOTS
+			),
+			\RecursiveIteratorIterator::SELF_FIRST
+		);
+		foreach ($files as $item):
 			if ($item->isDir()):
 				$copy_dir = $dest . DIRECTORY_SEPARATOR . $iterator->getSubPathname();
 				@mkdir($copy_dir, 0755);

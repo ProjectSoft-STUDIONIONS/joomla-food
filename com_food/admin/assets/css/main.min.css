@@ -1,1 +1,1 @@
-.clearfix::after,.clearfix::before{display:table;content:"";height:0;line-height:0}.clearfix::after{clear:both}
+.clearfix::after,.clearfix::before{display:table;content:"";height:0;line-height:0}.clearfix::after{clear:both}.food-table{position:relative}.food-table .table{position:relative}.food-table .table thead{position:sticky;top:83px;background-color:#fff;box-shadow:0 0 1px #000}

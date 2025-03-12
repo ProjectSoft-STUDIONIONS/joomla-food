@@ -8,3 +8,15 @@
 .clearfix::after {
   clear: both;
 }
+.food-table {
+  position: relative;
+}
+.food-table .table {
+  position: relative;
+}
+.food-table .table thead {
+  position: sticky;
+  top: 83px;
+  background-color: white;
+  box-shadow: 0 0 1px #000;
+}

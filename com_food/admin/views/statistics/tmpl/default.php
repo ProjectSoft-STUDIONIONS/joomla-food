@@ -4,8 +4,13 @@
 			<span class="label label-info pull-right"><?= $this->stats['total_books']; ?></span>
 			<?= JText::_('COM_FOOD_TITLE_BLOCK'); ?>
 		</h3>
-		<p><?= JText::_('COM_FOOD_DESC_BLOCK'); ?></p>
-		<div class="">
+		<p><?php
+		echo $this->stats['jversion'];
+		echo "<br>";
+	 	echo JText::_('COM_FOOD_DESC_BLOCK'); ?></p>
+		<p>Root: <?= JPATH_ROOT; ?></p>
+		<p><?= $this->stats["com_food_path"];?></p>
+		<div class="food-table">
 			<table class="table table-bordered table-food">
 				<thead>
 					<tr>
@@ -20,12 +25,230 @@
 					<tr>
 						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
 					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
+					<tr>
+						<td class="nowrap" colspan="5"><?= JText::_('COM_FOOD_TABLE_NOT_FOUND'); ?></td>
+					</tr>
 				</tbody>
 			</table>
 		</div>
 		<p><?= JText::_('COM_FOOD_DESC_BLOCK'); ?></p>
-		<p>Root: <?= JPATH_ROOT; ?></p>
 	</div>
-	<link rel="stylesheet" type="text/css" href="<?= JURI::base(false); ?>components/com_food/assets/css/main.min.css">
-	<script type="text/javascript" src="<?= JURI::base(false); ?>components/com_food/assets/js/main.min.js">"></script>
+	<link rel="stylesheet" type="text/css" href="<?= $this->stats["com_food_path"]; ?>assets/css/main.min.css?<?= filemtime(JPATH_COMPONENT_ADMINISTRATOR . "/assets/css/main.min.css");?>">
+	<script type="text/javascript" src="<?= $this->stats["com_food_path"]; ?>assets/js/main.min.js?<?= filemtime(JPATH_COMPONENT_ADMINISTRATOR . "/assets/js/main.min.js");?>"></script>
 </div>
