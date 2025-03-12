@@ -11,11 +11,12 @@ extension(type="component" version="2.5.0" method="upgrade")
 	description COM_FOOD_DESCRIPTION
 	install
 	files(folder="site")
-	scriptfile
+	scriptfile install.php
 	languages(folder="site")
 	administration
 		menu(link="option=com_food" img="components/com_food/assets/images/food_icon.png") COM_FOOD
 		files(folder="admin")
+			folder assets
 			folder controllers
 			folder helpers
 			folder languages

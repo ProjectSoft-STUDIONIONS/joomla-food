@@ -6,6 +6,9 @@ package-lock.json
 # dotenv
 .env
 
+# txt
+*.txt
+
 # test or temp
 test
 test.*

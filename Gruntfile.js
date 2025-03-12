@@ -40,13 +40,12 @@ module.exports = function(grunt) {
 	var gc = {
 		versions: `${PACK.version}`,
 		default: [
-			//"less",
-			//"autoprefixer",
-			//"replace",
-			//"cssmin",
-			//"copy",
+			"less",
+			"autoprefixer",
+			"cssmin",
+			"concat",
+			"uglify",
 			"pug",
-			//"lineending",
 			//"compress"
 		]
 	};
@@ -65,9 +64,9 @@ module.exports = function(grunt) {
 					plugins: []
 				},
 				files : {
-					/*'assets/modules/food-module/css/main.css' : [
-						'src/main.less'
-					]*/
+					'com_food/admin/assets/css/main.css' : [
+						'src/less/main.less'
+					]
 				}
 			},
 		},
@@ -80,37 +79,10 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: {
-					/*'assets/modules/food-module/css/main.css' : [
-						'assets/modules/food-module/css/main.css'
-					]*/
-				}
-			},
-		},
-		replace: {
-			css: {
-				options: {
-					patterns: [
-						{
-							match: /\/\*.+?\*\//gs,
-							replacement: ''
-						},
-						{
-							match: /\r?\n\s+\r?\n/g,
-							replacement: '\n'
-						}
+					'com_food/admin/assets/css/main.css' : [
+						'com_food/admin/assets/css/main.css'
 					]
-				},
-				files: [
-					/*{
-						expand: true,
-						flatten : true,
-						src: [
-							'assets/modules/food-module/css/main.css'
-						],
-						dest: 'assets/modules/food-module/css/',
-						filter: 'isFile'
-					},*/
-				]
+				}
 			},
 		},
 		cssmin: {
@@ -120,8 +92,46 @@ module.exports = function(grunt) {
 			},
 			minify: {
 				files: {
-					//'assets/modules/food-module/css/main.min.css' : ['assets/modules/food-module/css/main.css'],
+					'com_food/admin/assets/css/main.min.css' : ['com_food/admin/assets/css/main.css'],
 				}
+			},
+		},
+		concat: {
+			options: {
+				separator: "\n",
+			},
+			emoji: {
+				src: [
+					'src/js/main.js'
+				],
+				dest: 'com_food/admin/assets/js/main.js'
+			},
+		},
+		uglify: {
+			options: {
+				sourceMap: false,
+				compress: {
+					drop_console: false
+				},
+				output: {
+					ascii_only: true
+				}
+			},
+			app: {
+				files: [
+					{
+						expand: true,
+						flatten : true,
+						src: [
+							'com_food/admin/assets/js/main.js'
+						],
+						dest: 'com_food/admin/assets/js/',
+						filter: 'isFile',
+						rename: function (dst, src) {
+							return dst + '/' + src.replace('.js', '.min.js');
+						}
+					}
+				]
 			},
 		},
 		pug: {
@@ -145,21 +155,6 @@ module.exports = function(grunt) {
 					},
 				]
 			},
-		},
-		lineending: {
-			dist: {
-				options: {
-					eol: 'lf'
-				},
-				files: [
-					/*{
-						expand: true,
-						cwd: 'com_food',
-						src: ['**//*.{css,js,php,json,html}'],
-						dest: 'com_food'
-					}*/
-				]
-			}
 		},
 		compress: {
 			main: {

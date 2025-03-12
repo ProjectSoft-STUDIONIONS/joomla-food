@@ -27,17 +27,13 @@ class FoodHelpersFood
 	{
 		$user	= JFactory::getUser();
 		$result	= new JObject;
-
 		$assetName = 'com_food';
 		$level = 'component';
-
 		$actions = JAccess::getActions('com_food', $level);
-
 		foreach ($actions as $action)
 		{
 			$result->set($action->name,	$user->authorise($action->name, $assetName));
 		}
-
 		return $result;
 	}
 }

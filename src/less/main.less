@@ -1,0 +1,23 @@
+.clearfix {
+	&::before,
+	&::after {
+		display: table;
+		content: "";
+		height: 0;
+		line-height: 0;
+	}
+	&::after {
+		clear: both;
+	}
+}
+.table {
+	&-food {
+		thead,
+		tbody {
+			> tr {
+				> td,
+				> th {}
+			}
+		}
+	}
+}

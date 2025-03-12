@@ -1,0 +1,10 @@
+.clearfix::before,
+.clearfix::after {
+  display: table;
+  content: "";
+  height: 0;
+  line-height: 0;
+}
+.clearfix::after {
+  clear: both;
+}
