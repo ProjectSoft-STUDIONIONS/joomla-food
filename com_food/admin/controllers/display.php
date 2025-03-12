@@ -1,6 +1,6 @@
 <?php
 defined( '_JEXEC' ) or die( 'Restricted access' ); 
- 
+
 class FoodControllersDisplay extends JControllerBase
 {
 	public function execute()

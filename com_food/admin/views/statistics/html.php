@@ -1,7 +1,7 @@
 <?php
 
 defined( '_JEXEC' ) or die( 'Restricted access' ); 
- 
+
 class FoodViewsStatisticsHtml extends JViewHtml
 {
 	function render()
