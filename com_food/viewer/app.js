@@ -196,6 +196,7 @@
 	};
 	$.fancybox.defaults.afterClose = function(instance, current){
 		Cookies.remove('pdfjs.history', { path: '' });
+		localStorage.removeItem('pdfjs.history');
 	};
 	let items = $.makeArray($('a[href$=".xlsx"], a[href$=".docx"], a[href$=".pdf"]'));
 	$.each(items, function (i, item) {
