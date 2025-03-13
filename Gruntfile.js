@@ -46,6 +46,7 @@ module.exports = function(grunt) {
 			"concat",
 			"uglify",
 			"pug",
+			"copy"
 			//"compress"
 		]
 	};
@@ -123,7 +124,8 @@ module.exports = function(grunt) {
 						expand: true,
 						flatten : true,
 						src: [
-							'com_food/admin/assets/js/main.js'
+							'com_food/admin/assets/js/main.js',
+							'bower_components/jquery/dist/jquery.js'
 						],
 						dest: 'com_food/admin/assets/js/',
 						filter: 'isFile',
@@ -154,6 +156,14 @@ module.exports = function(grunt) {
 						ext: '.xml'
 					},
 				]
+			},
+		},
+		copy: {
+			main: {
+				expand: true,
+				cwd: 'bower_components/bootstrap/dist/fonts',
+				src: '**',
+				dest: 'com_food/admin/assets/fonts/',
 			},
 		},
 		compress: {

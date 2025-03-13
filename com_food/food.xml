@@ -9,10 +9,7 @@
 	<license>License MIT</license>
 	<version>1.0.0</version>
 	<description>COM_FOOD_DESCRIPTION</description>
-	<install></install>
-	<files folder="site"></files>
 	<scriptfile>install.php</scriptfile>
-	<languages folder="site"></languages>
 	<administration>
 		<menu link="option=com_food">COM_FOOD</menu>
 		<files folder="admin">

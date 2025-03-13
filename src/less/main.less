@@ -1,39 +1,25 @@
-.clearfix {
-	&::before,
-	&::after {
-		display: table;
-		content: "";
-		height: 0;
-		line-height: 0;
-	}
-	&::after {
-		clear: both;
-	}
-}
+// Core variables and mixins
+@import "../../bower_components/bootstrap/less/variables.less";
+@import "../../bower_components/bootstrap/less/mixins.less";
 
-.food {
-	&-table {
-		position: relative;
-		.table {
-			position: relative;
-			thead {
-				position: sticky;
-				top: 83px;
-				background-color: white;
-				box-shadow: 0 0 1px #000;
-			}
-		}
-	}
-}
+// Reset and dependencies
+@import "../../bower_components/bootstrap/less/glyphicons.less";
 
-.table {
-	&-food {
-		thead,
-		tbody {
-			> tr {
-				> td,
-				> th {}
-			}
-		}
-	}
-}
+// Core CSS
+@import "../../bower_components/bootstrap/less/scaffolding.less";
+@import "../../bower_components/bootstrap/less/type.less";
+@import "../../bower_components/bootstrap/less/code.less";
+// @import "grid.less";
+@import "../../bower_components/bootstrap/less/tables.less";
+@import "../../bower_components/bootstrap/less/forms.less";
+//@import "../../bower_components/bootstrap/less/buttons.less";
+
+// Components
+//@import "../../bower_components/bootstrap/less/button-groups.less";
+//@import "../../bower_components/bootstrap/less/input-groups.less";
+//@import "../../bower_components/bootstrap/less/labels.less";
+//@import "../../bower_components/bootstrap/less/badges.less";
+
+@import "theme.less";
+
+@import "style.less";

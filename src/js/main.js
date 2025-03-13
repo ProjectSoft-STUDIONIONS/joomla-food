@@ -1,4 +1,4 @@
 !(function($){
-	console.log(1, $);
-	console.log(2, jQuery);
+	const jq = $.noConflict(true);
+	console.log(jq.fn.jquery);
 }(jQuery));

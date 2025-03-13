@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
 	<fieldset name="component" label="COM_FOOD_OPTIONS" description="COM_FOOD_OPTIONS_DESC">
-		<field name="food_folders" type="text" default="food" class="btn-group" label="COM_FOOD_OPTIONS_FOLDER" description="COM_FOOD_OPTIONS_FOLDER_DESC" style="width: 100%;">
+		<field name="food_folders" type="text" default="" class="btn-group" label="COM_FOOD_OPTIONS_FOLDER" description="COM_FOOD_OPTIONS_FOLDER_DESC" style="width: 100%;">
 		</field>
 	</fieldset>
 	<fieldset name="permissions" description="JCONFIG_PERMISSIONS_DESC" label="JCONFIG_PERMISSIONS_LABEL">

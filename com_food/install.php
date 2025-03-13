@@ -39,45 +39,33 @@ class com_foodInstallerScript {
 	public function uninstall($parent){
 		/**
 		 * Удаляем директории скопированные при установке компонента.
-		 * Директория food НЕ УДАЛЯЕТСЯ. У неё только перезаписывается файл .htaccess
-		 * 
+		 * Директория food и прочие указанные в настройках НЕ УДАЛЯЮТСЯ.
+		 * У них только перезаписывается файл .htaccess,
+		 * чтобы небыло ощибок при дальнейшем использовании.
 		 */
 		$this->removeDir(JPATH_SITE.'/viewer');
 		$this->removeDir(JPATH_SITE.'/icons-full');
 		@rmdir(JPATH_SITE.'/viewer');
 		@rmdir(JPATH_SITE.'/icons-full');
-
-		$htaccess = 'AddDefaultCharset UTF-8
-<IfModule mod_rewrite.c>
-	RewriteEngine On
-	RewriteCond %{REQUEST_FILENAME} !-f
-	RewriteCond %{REQUEST_FILENAME} !-d
-</IfModule>
-
-# Установить опции
-Options +Indexes +ExecCGI +Includes
-
-# Запрещаем индексировать определённые файлы
-IndexIgnore .htaccess *.shtml *.php *.cgi *.html *.js *.css *.ico
-
-# Установить опции индексирования.
-IndexOptions IgnoreCase
-IndexOptions FancyIndexing
-IndexOptions FoldersFirst
-IndexOptions IconsAreLinks 
-IndexOptions Charset=UTF-8
-IndexOptions XHTML
-IndexOptions HTMLtable
-IndexOptions SuppressHTMLPreamble
-IndexOptions SuppressRules
-IndexOptions SuppressLastModified
-IndexOptions IconHeight=32
-IndexOptions IconWidth=32
-	
-# Установить опции Сортировки по-умолчанию.
-IndexOrderDefault Descending Name
-';
-		@file_put_contents(JPATH_SITE.'/food/.htaccess', $htaccess);
+		$component = JComponentHelper::getComponent('com_food');
+		$folders = $component->params->get('food_folders');
+		$folders = preg_split('/[\s,;]+/', $folders);
+		$food = array("food");
+		$array = array_filter(array_unique(array_merge($food, $folders)));
+		$glob_path = str_replace("\\", "/", JPATH_SITE) . "/";
+		$output = "";
+		// Пробегаемся по директориям указанных в настройках
+		foreach($array as $key => $value):
+			$path = array($glob_path, $value, ".htaccess");
+			$path = implode("/", $path);
+			if(is_file($path)):
+				// Перезаписываем .htacces
+				$htaccess = "";
+				include(__DIR__ . "/models/.htaccess.dev.php");
+				@file_put_contents($path, $htaccess);
+				$output .= $htaccess;
+			endif;
+		endforeach;
 	}
 
 	private function copyDir($source, $dest) {
@@ -90,11 +78,11 @@ IndexOrderDefault Descending Name
 		);
 		foreach ($files as $item):
 			if ($item->isDir()):
-				$copy_dir = $dest . DIRECTORY_SEPARATOR . $iterator->getSubPathname();
-				@mkdir($copy_dir, 0755);
+				$copy_dir = $dest . DIRECTORY_SEPARATOR . $item->getRealPath();
+				@mkdir($copy_dir);
 				@chmod($copy_dir, 0755);
 			else:
-				$copy_file = $dest . DIRECTORY_SEPARATOR . $iterator->getSubPathname();
+				$copy_file = $dest . DIRECTORY_SEPARATOR . $item->getRealPath();
 				@copy($item, $copy_file);
 				@chmod($dest . $copy_file, 0644);
 			endif;
