@@ -23,4 +23,42 @@ class FoodViewsStatisticsHtml extends JViewHtml
 			JToolbarHelper::preferences('com_food');
 		}
 	}
+
+	public function getSize($file) {
+
+		$sizes = array('Tb' => 1099511627776, 'Gb' => 1073741824, 'Mb' => 1048576, 'Kb' => 1024, 'b' => 1);
+		$precisions = count($sizes) - 1;
+		$size = filesize($file);
+		foreach ($sizes as $unit => $bytes) {
+			if ($size >= $bytes) {
+				return number_format($size / $bytes, $precisions) . ' ' . $unit;
+			}
+			$precisions--;
+		}
+		return '0 b';
+	}
+
+	/**
+	 * Вывод времени в определённом формате
+	 */
+	public function toDateFormat($timestamp = 0)
+	{
+		$timestamp = trim($timestamp);
+		
+		$timestamp = (int)$timestamp;
+
+		$dateFormat = 'd-m-Y H:i:s';
+
+		$strTime = date($dateFormat, $timestamp);
+
+		return $strTime;
+	}
+
+	/**
+	 * Получение пути файла в правильном формате
+	 */
+	public function realPath($path = "") {
+		$path = rtrim($path, "\\/");
+		return str_replace('\\', '/', $path);
+	}
 }

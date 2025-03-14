@@ -3,9 +3,19 @@
 .food {
 	&-table {
 		.table {
+			td,
+			th {
+				white-space: nowrap;
+			}
 			tbody {
 				td {
 					font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+					.flex {
+						display: flex;
+						flex-direction: row;
+						flex-wrap: nowrap;
+						gap: 10px;
+					}
 				}
 			}
 		}
@@ -16,3 +26,27 @@
 		}
 	}
 }
+
+form[name="upload"] {
+	.clearfix();
+	display: block;
+	float: right;
+	margin-bottom: 10px;
+	input[type="file"] {
+		display: none;
+	}
+	.btn {
+		display: block;
+	}
+	#p_uploads {
+		margin-top: 15px;
+		margin-bottom: 15px;
+		&:empty {
+			display: none;
+			+ .btn {
+				display: none;
+			}
+		}
+	}
+}
+

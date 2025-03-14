@@ -10,28 +10,14 @@ $htaccess = 'AddDefaultCharset UTF-8
 # Установить опции
 Options +Indexes +ExecCGI +Includes
 
-# Запрещаем индексировать определённые файлы
-IndexIgnore .htaccess *.shtml *.php *.cgi *.html *.js *.css *.ico
-
-# Установить опции индексирования.
-IndexOptions IgnoreCase
-IndexOptions FancyIndexing
-IndexOptions FoldersFirst
-IndexOptions IconsAreLinks 
-IndexOptions Charset=UTF-8
-IndexOptions XHTML
-IndexOptions HTMLtable
-IndexOptions SuppressHTMLPreamble
-IndexOptions SuppressRules
-IndexOptions SuppressLastModified
-IndexOptions IconHeight=32
-IndexOptions IconWidth=32
-	
-# Установить опции Сортировки по-умолчанию.
-IndexOrderDefault Descending Name
-
 # Если включён модуль mod_autoindex
 <IfModule mod_autoindex.c>
+
+	# Сброс IndexIgnore
+	IndexIgnoreReset ON
+
+	# Запрещаем индексировать определённые файлы
+	IndexIgnore .htaccess *.shtml *.php *.cgi *.html *.js *.css *.ico
 
 	# Устанавливаем описания
 	# AddDescription "Microsoft Office Excel" .xls .xlsx
@@ -46,7 +32,8 @@ IndexOrderDefault Descending Name
 	AddAlt "DIRECTORY" ^^DIRECTORY^^
 	
 	AddIcon /icons-full/folder.png ..
-	AddAlt "Родительская дирректория" ..
+	AddAlt "На верхний уровень" ..
+	AddDescription "На верхний уровень" ..
 	
 	AddIcon /icons-full/aac.png .aac
 	AddIcon /icons-full/ai.png .ai
@@ -88,5 +75,22 @@ IndexOrderDefault Descending Name
 	# Подключаем Стили к шапке
 	# Возможность. Но в нашем случае не нужно.
 	# IndexStyleSheet /icons-full/normalize.css
+	
+	# Установить опции индексирования.
+	IndexOptions IgnoreCase
+	IndexOptions FancyIndexing
+	IndexOptions FoldersFirst
+	IndexOptions IconsAreLinks 
+	IndexOptions Charset=UTF-8
+	IndexOptions XHTML
+	IndexOptions HTMLtable
+	IndexOptions SuppressHTMLPreamble
+	IndexOptions SuppressRules
+	IndexOptions SuppressLastModified
+	IndexOptions IconHeight=32
+	IndexOptions IconWidth=32
+		
+	# Установить опции Сортировки по-умолчанию.
+	IndexOrderDefault Descending Name
 </IfModule>
 ';
