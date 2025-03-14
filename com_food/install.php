@@ -25,13 +25,17 @@ class com_foodInstallerScript {
 		 * Директория food создаётся автоматически и никогда не удаляется.
 		 */
 		$current_path = dirname(__FILE__) . "/";
-		@mkdir(JPATH_SITE.'/food', 0755);
+		@mkdir(JPATH_SITE.'/food');
 		@chmod(JPATH_SITE.'/food', 0755);
-		@mkdir(JPATH_SITE.'/icons-full', 0755);
+		@mkdir(JPATH_SITE.'/icons-full');
 		@chmod(JPATH_SITE.'/icons-full', 0755);
-		@mkdir(JPATH_SITE.'/viewer', 0755);
+		@mkdir(JPATH_SITE.'/viewer');
 		@chmod(JPATH_SITE.'/viewer', 0755);
-		$this->copyDir($current_path . "food",       JPATH_SITE.'/food');
+
+		$htaccess = "";
+		include($current_path . "admin/models/.htaccess.old.php");
+		@file_put_contents(JPATH_SITE.'/food/.htaccess', $htaccess);
+
 		$this->copyDir($current_path . "icons-full", JPATH_SITE.'/icons-full');
 		$this->copyDir($current_path . "viewer",     JPATH_SITE.'/viewer');
 	}
@@ -53,7 +57,6 @@ class com_foodInstallerScript {
 		$food = array("food");
 		$array = array_filter(array_unique(array_merge($food, $folders)));
 		$glob_path = str_replace("\\", "/", JPATH_SITE) . "/";
-		$output = "";
 		// Пробегаемся по директориям указанных в настройках
 		foreach($array as $key => $value):
 			$path = array($glob_path, $value, ".htaccess");
@@ -63,7 +66,6 @@ class com_foodInstallerScript {
 				$htaccess = "";
 				include(__DIR__ . "/models/.htaccess.dev.php");
 				@file_put_contents($path, $htaccess);
-				$output .= $htaccess;
 			endif;
 		endforeach;
 	}

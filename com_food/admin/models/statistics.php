@@ -62,7 +62,11 @@ class FoodModelsStatistics extends JModelBase
 			$stats["food_title"] = $dir ? $dir : false;
 		else:
 			$stats["food_title"] = false;
-			$dir = "";
+			// Если параметр $dir существует и не верный - редирект
+			if($dir):
+				$tpl = JText::_('COM_FOOD_DIR_ERROR');
+				$application->redirect('index.php?option=' . $option, JText::sprintf($tpl, $dir), 'error');
+			endif;
 		endif;
 		$stats["dir"] = $dir;
 		$stats["files"] = array();
@@ -81,31 +85,34 @@ class FoodModelsStatistics extends JModelBase
 					if(in_array($ext, $exts)):
 						// Проверить дату (год) в имени файла
 						$name = $fileinfo->getFilename();
-						$re = '/^(?:[\w]+)?(\d{4})/';
-						preg_match($re, $name, $matches, PREG_UNMATCHED_AS_NULL);
+					//	$re = '/^(?:[\w]+)?(\d{4})/';
+					//	preg_match($re, $name, $matches, PREG_UNMATCHED_AS_NULL);
 						// Если есть 4 цифры в имени файла
-						if($matches):
+					//	if($matches):
 							// Год сейчас
-							$year = intval(date("Y", time()));
+					//		$year = intval(date("Y", time()));
 							// Год в имени файла
-							$file_year = intval($matches[1]);
+					//		$file_year = intval($matches[1]);
 							// Если разница лет больше/равно 5 лет.
-							if($year - $file_year > 4):
+					//		if($year - $file_year > 4):
 								// Удаляем файл
-								$file_absolute = path_join($startpath, $name);
-								@unlink($file_absolute);
-							else:
+					//			$file_absolute = path_join($startpath, $name);
+					//			@unlink($file_absolute);
+					//		else:
 								// Добавляем файл в отображение
-								$stats["files"][] = $name;
-							endif;
-						else:
+					//			$stats["files"][] = $name;
+					//		endif;
+					//	else:
 							// Добавляем файл в отображение
 							$stats["files"][] = $name;
-						endif;
+					//	endif;
 					endif;
 				endif;
 			endforeach;
 		endif;
+		//rsort($stats["files"]);
+		natsort($stats["files"]);
+		$stats["files"] = array_reverse($stats["files"], false);
 		$stats["uri"] = JURI::getInstance()->toString();
 		return $stats;
 	}
