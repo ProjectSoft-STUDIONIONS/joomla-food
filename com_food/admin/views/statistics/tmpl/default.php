@@ -58,8 +58,8 @@
 								<td><?= $size; ?></td>
 								<td><!-- Переименовать, Удалить -->
 									<div class="flex">
-										<i class="btn btn-secondary glyphicon glyphicon-edit" data-mode="rename" data-file="<?= $value; ?>"></i>
-										<i class="btn btn-secondary glyphicon glyphicon-trash" data-mode="delete" data-file="<?= $value; ?>"></i>
+										<i class="btn btn-secondary glyphicon glyphicon-edit" data-mode="rename" data-file="<?= $value; ?>" title='Переименовать "<?= $value; ?>"'></i>
+										<i class="btn btn-secondary glyphicon glyphicon-trash" data-mode="delete" data-file="<?= $value; ?>" title='Удалить "<?= $value; ?>"'></i>
 									</div>
 								</td>
 							</tr>
