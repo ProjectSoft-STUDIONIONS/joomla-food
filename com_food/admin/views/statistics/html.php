@@ -41,16 +41,10 @@ class FoodViewsStatisticsHtml extends JViewHtml
 	/**
 	 * Вывод времени в определённом формате
 	 */
-	public function toDateFormat($timestamp = 0)
+	public function toDateFormat( $timestamp = 0 )
 	{
-		$timestamp = trim($timestamp);
-		
-		$timestamp = (int)$timestamp;
-
 		$dateFormat = 'd-m-Y H:i:s';
-
 		$strTime = date($dateFormat, $timestamp);
-
 		return $strTime;
 	}
 

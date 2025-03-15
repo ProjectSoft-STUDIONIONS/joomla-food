@@ -2,11 +2,6 @@
 
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
-//jimport( 'joomla.application.component.helper' );
-//jimport( 'joomla.html.parameter' );
-//use Joomla\CMS\Uri\Uri;
-//use Joomla\CMS\Router\Route;
-
 class FoodModelsStatistics extends JModelBase
 {
 	private $exts = array("xlsx", "pdf");
@@ -79,13 +74,10 @@ class FoodModelsStatistics extends JModelBase
 				$this->upload($stats);
 				break;
 			case 'rename':
-				// code...
+				// Переименование
 				break;
 			case 'delete':
-				// code...
-				break;
-			default:
-				// code...
+				// Удаление
 				break;
 		}
 
@@ -132,7 +124,6 @@ class FoodModelsStatistics extends JModelBase
 		//rsort($stats["files"]);
 		natsort($stats["files"]);
 		$stats["files"] = array_reverse($stats["files"], false);
-		$stats["uri"] = \JURI::getInstance()->toString();
 		return $stats;
 	}
 
@@ -208,7 +199,7 @@ class FoodModelsStatistics extends JModelBase
 			$application->enqueueMessage($msg_error, 'error');
 		endif;
 		if($success):
-			$application->enqueueMessage($msg_success, 'success');
+			$application->enqueueMessage($msg_success, 'message');
 		endif;
 		$application->redirect('index.php?option=' . $stats["option"] . "&dir=" . $stats["dir"]);
 	}
